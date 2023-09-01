@@ -15,7 +15,7 @@ class Orders {
     }
 
     fetchCart(req, res) {
-        const query = `SELECT prodName, price, prodUrl FROM Users INNER JOIN Orders ON Users.userID = Orders.userID INNER JOIN Products ON Orders.prodID = Products.prodID WHERE Orders.userID = Users.userID`
+        const query = `SELECT prodName, price, prodUrl FROM Users INNER JOIN Orders ON Users.userID = Orders.userID INNER JOIN Products ON Orders.prodID = Products.prodID WHERE Orders.userID = Users.userID;`
 
         db.query(query, (err, data) => {
             if (err) throw err
@@ -39,4 +39,45 @@ class Orders {
             })
         })
     }
+
+    updateCart(req, res) {
+        const query = `UPDATE Orders SET ? WHERE orderID = ?;`
+
+        db.query(query, [req.body, req.params.id], (err) => {
+            if (err) throw err
+
+            res.json({
+                status: res.statusCode,
+                message: "Order Updated!"
+            })
+        })
+    }
+
+    clearCart(req, res) {
+        const query = `DELETE FROM Orders WHERE userID = '${req.params.id}';`
+
+        db.query(query, (err) => {
+            if (err) throw err
+
+            res.json({
+                status: res.statusCode,
+                message: "Cart Cleared!"
+            })
+        })
+    }
+
+    removeFromCart(req, res) {
+        const query = `DELETE FROM Orders WHERE prodID = '${req.params.id}';`
+
+        db.query(query, (err) => {
+            if (err) throw err
+
+            res.json({
+                status: res.statusCode,
+                message: "Item Removed From Cart!"
+            })
+        })
+    }
 }
+
+module.exports = Orders;
