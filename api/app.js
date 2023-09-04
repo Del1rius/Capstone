@@ -5,7 +5,7 @@ const path = require("path")
 const cookieParser = require("cookie-parser")
 const cors =  require("cors")
 const app = express()
-const PORT = process.env.PORt || 4000
+const PORT = process.env.PORT || 4000
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*")

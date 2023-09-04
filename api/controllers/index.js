@@ -1,7 +1,7 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const routes = express.Router()
-const { users, products, orders } = require("../models/index")
+const { users, products, orders } = require("../models")
 const verifyAToken = require("../middleware/authenticateUser")
 
 routes.get("/users", (req, res) => {
