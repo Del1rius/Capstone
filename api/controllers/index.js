@@ -1,8 +1,7 @@
-import express from ('express');
+const express = require('express')
 const bodyParser = require("body-parser");
 const routes = express.Router();
-// Import all models objects
-const {users, products, orders} = require("../model");
+const {users, products, orders} = require("../models");
 const verifyAToken = require("../middleware/authenticateUser")
 
 routes.get("/users", (req, res) => {
