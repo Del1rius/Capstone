@@ -79,3 +79,5 @@ routes.delete("/user/:id/cart", (req, res) => {
 routes.delete("/user/:id/cart/:id", (req, res) => {
     orders.removeFromCart(req, res)
 })
+
+module.exports = {express, routes}
