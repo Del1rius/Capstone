@@ -1,4 +1,4 @@
-const db = require("../config/db.config")
+const db = require("../config")
 const {hash, compare, hashSync} = require("bcrypt")
 const {createToken} = require("../middleware/authenticateUser")
 
@@ -16,13 +16,9 @@ class Users {
     }
 
     fetchUser(req, res) {
-        const query = 
-        `
-        SELECT userID, firstName, lastName, emailAdd, userPass, userImg, userRole
-        WHERE ID = ?
-        FROM Users;
-        `
-        db.query(query, (err, data) => {
+        const id = req.params.id
+        const query = `SELECT userID, firstName, lastName, emailAdd, userPass, userImg, userRole FROM Users WHERE userID = ? ;`
+        db.query(query, id, (err, data) => {
             if (err) throw err
             res.json(data)
         })

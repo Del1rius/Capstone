@@ -2,8 +2,8 @@ const errorHandling = require("./middleware/errorHandling")
 const path = require("path")
 const cookieParser = require("cookie-parser")
 const cors =  require("cors")
-const {express, routes} = require("./controllers")
-
+const {routes} = require("./controllers")
+const express = require('express');
 const app = express()
 const PORT = process.env.PORT || 4000
 
@@ -23,22 +23,29 @@ app.use(
     express.static("./static"),
     express.urlencoded({
         extended: false,
-    }),
+    }),     
     cookieParser(),
     cors(),
     routes,
     errorHandling
 )
 
-app.use('/', require('./controllers/index'))
 
+// app.use('/', require('./controllers/index'))
+
+// app.get("/", (req, res) => {
+//     try {
+//         res.status(200)
+//         res.send("TEST")
+//     } catch (error) {
+//         console.log(error.message)
+//     }
+// })
 app.get("/", (req, res) => {
-    console.log('test')
     res.sendFile(path.resolve(__dirname, "./static/html/index.html"))
 })
 
-
-app.listen(PORT, ()=> {
+app.listen(PORT, () => {
     console.log(`Server is Live on ${PORT}`)
 })
 

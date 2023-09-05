@@ -1,8 +1,9 @@
-const express = require('express')
+const express = require("express");
 const bodyParser = require("body-parser");
 const routes = express.Router();
-const {users, products, orders} = require("../models");
-const verifyAToken = require("../middleware/authenticateUser")
+
+const { users, products, orders } = require("../models");
+const verifyAToken = require('../middleware/authenticateUser')
 
 routes.get("/users", (req, res) => {
     users.fetchUsers(req, res)
@@ -80,4 +81,4 @@ routes.delete("/user/:id/cart/:id", (req, res) => {
     orders.removeFromCart(req, res)
 })
 
-module.exports = {express, routes}
+module.exports = {express, routes};
