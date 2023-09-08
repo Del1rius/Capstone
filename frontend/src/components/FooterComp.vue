@@ -1,6 +1,7 @@
 <template>
     <footer class="text-center text-lg-start bg-black" style="background-color: #CDCDCD">
       <div class="container p-4">
+        <hr class="my-3">
         <section class="">
           <div class="row">
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -95,6 +96,9 @@ p {
 
 .test {
     color: #EEBC1D !important;
+}
+hr {
+  color: #EEBC1D !important;
 }
 
 </style>
