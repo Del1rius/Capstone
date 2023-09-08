@@ -44,7 +44,7 @@ export default {
 }
 </script>
 <style scoped>
-  a {
+a {
   color: #EEBC1D;
 }
 .border {

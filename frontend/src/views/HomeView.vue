@@ -1,7 +1,7 @@
 <template>
  <div class="container-fluid bg-black text-white">
     <div class="p-2">
-        <div class="hero">
+        <div class="hero mt-4">
             <div class="row d-flex justify-content-center">
                 <div class="col-5 block-1 p-5 m-5">
                     <h2 class="display-1 test-1">

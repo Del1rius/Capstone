@@ -1,7 +1,9 @@
 <template>
-  <nav-bar-comp/>
-  <router-view/>
-  <footer-comp/>
+  <div>
+    <nav-bar-comp/>
+   <router-view/>
+    <footer-comp/>
+  </div>
   
 </template>
 <script>
@@ -17,18 +19,11 @@ export default {
 ::-webkit-scrollbar {
   display: none;
 }
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Roboto+Mono:wght@500&display=swap');
 
 * {
-  
-font-family: 'Noto Sans JP', sans-serif;
-font-family: 'Roboto Mono', monospace;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Roboto Mono', monospace;
 }
 </style>
