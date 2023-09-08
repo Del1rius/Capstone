@@ -1,14 +1,22 @@
 <template>
-  <NavBarComp/>
+  <nav-bar-comp/>
   <router-view/>
+  <footer-comp/>
+  
 </template>
 <script>
-import NavBarComp from '@/components/NavBarComp.vue';
+import FooterComp from './components/FooterComp.vue';
+import NavBarComp from './components/NavBarComp.vue';
+
 export default {
-  components: {NavBarComp}
+  components: { NavBarComp, FooterComp },
+  
 };
 </script>
 <style>
+::-webkit-scrollbar {
+  display: none;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,17 +24,11 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Roboto+Mono:wght@500&display=swap');
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+* {
+  
+font-family: 'Noto Sans JP', sans-serif;
+font-family: 'Roboto Mono', monospace;
 }
 </style>

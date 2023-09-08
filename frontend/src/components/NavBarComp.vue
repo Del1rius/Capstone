@@ -12,17 +12,17 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand fs-3 ms-4" href="#">Kustom Kulture</a>
+      <router-link to="/" class="navbar-brand fs-3 ms-4" href="#">Kustom Kulture</router-link>
       <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link fs-5" aria-current="page" href="#">Home</a>
+            <router-link class="nav-link fs-5" aria-current="page" to="/">Home</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" href="#">About</a>
+            <router-link to="/about" class="nav-link fs-5" href="#">About</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" href="#">Contact</a>
+            <router-link to="/contact" class="nav-link fs-5" href="#">Contact</router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link fs-5" href="#">Products</a>
@@ -37,8 +37,10 @@
   </nav>
 </template>
 <script>
+import router from '@/router';
+
 export default {
-    
+    components: { router }
 }
 </script>
 <style scoped>
