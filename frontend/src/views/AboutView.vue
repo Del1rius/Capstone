@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid bg-black main">
-    <h2 class="display-3">
+    <h2 class="display-3 text-center">
       About Kustom Kulture
     </h2>
     <div class="row">
@@ -17,10 +17,10 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-3 block-3 mt-4 text-center ms-5 mb-3">
+      <div class="col-3 block-3 mt-4 ms-5 mb-3">
         <img src="https://i.postimg.cc/tCzR1qgx/pic-2.webp" alt="kenblock" class="pic-2">
       </div>
-      <div class="col-8 block-4 mt-4 ms-5 mb-3">
+      <div class="col-8 block-4 mt-4 ms-5 mb-3 text-center">
         <h6 class="display-5">
           Our Mission
         </h6>
@@ -46,7 +46,7 @@
       <div class="col-3 block-7 mt-4 text-center ms-5 mb-3">
         <img src="https://i.postimg.cc/qR3w51RH/pic5.webp" alt="akira nakai" class="pic-4">
       </div>
-      <div class="col-8 block-8 mt-4 ms-5 mb-3">
+      <div class="col-8 block-8 mt-4 ms-5 mb-3 text-center">
         <h6 class="display-6">
           Our Promise
         </h6>

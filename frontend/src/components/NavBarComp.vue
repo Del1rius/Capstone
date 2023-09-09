@@ -54,7 +54,11 @@ a {
 
 a:hover {
   color: #EEBC1D;
+}
 
+a:active {
+  border: 2px solid #EEBC1D;
+  border-radius: 25px;
 }
   
 </style>
