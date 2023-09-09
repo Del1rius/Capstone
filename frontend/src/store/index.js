@@ -99,7 +99,9 @@ export default createStore({
         const {data} = await axios.get(`${url}products`);
         context.commit("setProducts", data.results);
       } catch (e) {
-        context.commit("setMsg", "An error Occurred while fetching products"
+        context.commit(
+          "setMsg", 
+          "An Error Occurred while fetching products!"
         )
       }
     },
@@ -113,10 +115,67 @@ export default createStore({
       } catch (e) {
         context.commit(
           "setMsg",
-          "An error Occurred while fetching the product"
+          "An Error Occurred while fetching the product!"
         );
       }
     },
+
+    async addProduct(context, payload) {
+      try {
+        
+      } catch (e) {
+        
+      }
+    },
+    
+    async updateProduct(context, payload) {
+      try {
+        const res = await axios.patch(`${url}product/${payload.prodID}`, payload); 
+        const { msg, err } = await res.data;
+        
+        if (err) {
+          console.log("An Error Has Occurred", err);
+          console.commit("setMSg", err)
+        }
+
+        if (msg) {
+          context.dispatch("fetchProducts");
+          context.commit("setProduct", msg);
+          context.commit(
+            "setMsg", 
+            "Product was updated successfully!"
+            );
+        }
+      } catch (e) {
+        context.commit("setMsg", e)
+      }
+    },
+
+    async deleteProduct(context, prodID) {
+      try {
+        const { res } = await axios.delete(`${url}product/${prodID}`);
+        const { msg, err } = await res.data;
+        if (err) {
+          alert("An Error has Occurred, please try again later!");
+        }
+
+        if (message) {
+          context.commit("setProduct", msg);
+          context.commit("setSpinner", false);
+        } else {
+          context.commit(
+            "setMsg", 
+            "An error occurred."
+            );
+        } 
+
+      } catch (e) {
+        context.commit(
+          "setMsg",
+          "An Error Occurred while deleting a product!"
+        );
+      }
+    }
 
     
   }
