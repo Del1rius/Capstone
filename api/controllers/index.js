@@ -45,17 +45,17 @@ routes.put("/product/:id", (req, res) => {
     products.updateProduct(req, res)
 })
 
-routes.patch("product/:id", (req, res) => {
+routes.patch("/product/:id", (req, res) => {
     products.updateProduct(req, res)
 })
 
-routes.delete("product/:id", (req, res) => {
-    products.deleteProduct
+routes.delete("/product/:id", (req, res) => {
+    products.deleteProduct(req, res)
 })
 
-routes.get("/orders", (req, res) => [
+routes.get("/orders", (req, res) => {
     orders.fetchOrders(req, res)
-])
+})
 
 routes.get("/user/:id/carts", (req, res) => {
     orders.fetchCart(req, res)
@@ -81,4 +81,4 @@ routes.delete("/user/:id/cart/:id", (req, res) => {
     orders.removeFromCart(req, res)
 })
 
-module.exports = {express, routes};
+module.exports = {express, routes};     
