@@ -25,10 +25,10 @@
             <router-link to="/contact" class="nav-link fs-5" href="#">Contact</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" href="#">Products</a>
+            <router-link to="/products" class="nav-link fs-5" href="#">Products</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" href="#">Admin</a>
+            <router-link to="/admin" class="nav-link fs-5" href="#">Admin</router-link>
           </li>
         </ul>
         
