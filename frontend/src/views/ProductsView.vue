@@ -2,10 +2,10 @@
     <div class="container-fluid bg-black main">
         <h2 class="display-3 text-center">Products</h2>
         <div v-if="products" class="flex-container" id="prods">
-            <div class="display" v-for="product in products" :key="product" :product="product" col-6>
+            <div class="display" v-for="product in products" :key="product.prodID" :product="product" col-6>
                 <div class="card">
                     <div>
-                        <img src="product.prodUrl" alt="product.prodName" class="img-fluid">
+                        <img :src="product.prodUrl" :alt="product.prodName" class="img-fluid">
                     </div>
                     <div class="text-center mt-auto">
                         <h2 class="display-6">{{  product.prodName }}</h2>
@@ -29,7 +29,7 @@
 import SpinnerComp from '../components/SpinnerComp.vue'
 
 export default {
-    props: {product},
+    // props: {products},
 
     components: {SpinnerComp},
 
@@ -55,6 +55,10 @@ export default {
                 return isMatch;
             });
         },
+
+        products() {
+            return this.$store.state.products;
+        }
     },
 
     mounted() {

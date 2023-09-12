@@ -12,8 +12,8 @@ export default createStore({
     spinner: null,
     asc: true,
     msg: null,
-    users: null || JSON.parse(localStorage.getItem("user")),
-    user: null,
+    users: null,
+    user: null || JSON.parse(localStorage.getItem("user")),
     userAuth: null,
     userLoggedIn: false,
     token: null || JSON.parse(localStorage.getItem("token"))
@@ -96,9 +96,16 @@ export default createStore({
   actions: {
     async fetchProducts(context) {
       try {
-        const {data} = await axios.get(`${url}products`);
-        context.commit("setProducts", data.results);
-      } catch (e) {
+        let products = await (await fetch(url+ "products")).json()
+        if (products) {
+          context.commit("setProducts", products);
+        } else {
+          alert("error")
+        }
+        // const {data} = await axios.get(`${url}products`);
+        
+      } 
+      catch (e) {
         context.commit(
           "setMsg", 
           "An Error Occurred while fetching products!"
