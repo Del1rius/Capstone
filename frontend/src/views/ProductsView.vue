@@ -1,6 +1,22 @@
 <template>
   <div class="container-fluid bg-black main">
     <h2 class="display-3 text-center">Products</h2>
+    <div class="m-3 p-3 d-flex justify-content-between media-fix-2">
+      <select v-model="genre" class="select">
+        <option value="All">All Options</option>
+        <option value="Rock">Turbo Kits</option>
+        <option value="Soul">Suspension</option>
+        <option value="Punk">Body Kits</option>
+        <option value="Reggae">Merchandise</option>
+      </select>
+      
+      <input type="text" v-model="search" placeholder="Search our catalogue!" class="w-50 search text-center"/>
+
+      <div class="media-fix-3">
+        <button class="sort-btn" @click="sortByPrice">Sort By Price</button>
+        <button class="sort-btn" @click="sortByName">Sort (A-Z)</button>
+      </div>
+    </div>
     <div v-if="products" class="flex-container" id="prods">
       <div
         class="display col-4"
@@ -22,7 +38,7 @@
             <div class="view-prod mt-2">
                 <button
                 @click="viewProduct(product.prodID)"
-                class="btn details-btn"
+                class="btn productBtn"
               >
               View Product
               </button>
@@ -40,7 +56,7 @@
 import SpinnerComp from "../components/SpinnerComp.vue";
 
 export default {
-//   props: [products],
+  // props: [products],
 
   components: { SpinnerComp },
 
@@ -83,7 +99,15 @@ export default {
         );
 
         this.$store.commit("setSelectedProduct", selectedProduct);
-        this.$router.push({name: "product", params: { prodID: prodID}})
+        this.$router.push({name: "product", params: { id: prodID }})
+    },
+
+    sortByPrice() {
+      this.$store.commit("sortByPrice")
+    },
+
+    sortByName() {
+      this.$store.commit("sortByName")
     }
   }
 };
@@ -124,7 +148,26 @@ h2 {
   padding: 5px;
 }
 
-a {
-    text-decoration: none;
+.select {
+  background-color: black;
+  color: #eebc1d !important;
+  border: 2px solid #eebc1d;
+  border-radius: 10px;
 }
+
+.search {
+  background-color: black;
+  color: #eebc1d !important;
+  border: 2px solid #eebc1d;
+  border-radius: 10px;
+}
+
+.sort-btn {
+  background-color: black;
+  color: #eebc1d !important;
+  border: 2px solid #eebc1d;
+  border-radius: 10px;
+  margin: 5px;
+}
+
 </style>
