@@ -16,7 +16,7 @@
       <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <router-link class="nav-link fs-5" aria-current="page" to="/">Home</router-link>
+            <router-link class="nav-link fs-5" to="/">Home</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/about" class="nav-link fs-5" href="#">About</router-link>
@@ -29,6 +29,15 @@
           </li>
           <li class="nav-item">
             <router-link to="/admin" class="nav-link fs-5" href="#">Admin</router-link>
+          </li>
+          
+        </ul>
+        <ul class="navbar-nav me-1">
+          <li class="nav-item">
+            <router-link to="/login" class="nav-link fs-5" href="#">Login</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/register" class="nav-link fs-5" href="#">Register</router-link>
           </li>
         </ul>
         
@@ -53,12 +62,12 @@ a {
 }
 
 a:hover {
-  color: #EEBC1D;
+  color: #EEBC1D !important;
 }
 
-a:active {
-  border: 2px solid #EEBC1D;
-  border-radius: 25px;
+.router-link-active {
+  border: 3px solid #EEBC1D;
+  color: #EEBC1D !important;
 }
   
 </style>
