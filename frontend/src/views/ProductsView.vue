@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid bg-black main">
     <h2 class="display-3 text-center">Products</h2>
-    <div class="m-3 p-3 d-flex justify-content-between media-fix-2">
+    <div class="m-3 p-3 d-flex justify-content-between">
       <select v-model="genre" class="select">
         <option value="All">All Options</option>
         <option value="Rock">Turbo Kits</option>
@@ -12,7 +12,7 @@
       
       <input type="text" v-model="search" placeholder="Search our catalogue!" class="w-50 search text-center"/>
 
-      <div class="media-fix-3">
+      <div class="text-center">
         <button class="sort-btn" @click="sortByPrice">Sort By Price</button>
         <button class="sort-btn" @click="sortByName">Sort (A-Z)</button>
       </div>
