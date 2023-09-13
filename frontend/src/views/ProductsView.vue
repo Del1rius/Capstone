@@ -20,12 +20,12 @@
             <h2 class="fs-2">{{ product.prodName }}</h2>
             <div class="fs-4 price">R {{ product.price }}</div>
             <div class="view-prod mt-2">
-              <router-link
-                :to="{ name: 'product', params: { id: product.prodID } }"
-                class="productBtn"
+                <button
+                @click="viewProduct(product.prodID)"
+                class="btn details-btn"
               >
-                View Product
-              </router-link>
+              View Product
+              </button>
             </div>
           </div>
         </div>
@@ -75,6 +75,17 @@ export default {
   mounted() {
     this.$store.dispatch("fetchProducts");
   },
+
+  methods: {
+    viewProduct(prodID) {
+        const selectedProduct = this.products.find(
+            (product) => product.prodID === prodID
+        );
+
+        this.$store.commit("setSelectedProduct", selectedProduct);
+        this.$router.push({name: "product", params: { prodID: prodID}})
+    }
+  }
 };
 </script>
 
