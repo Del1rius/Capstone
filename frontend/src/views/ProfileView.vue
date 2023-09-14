@@ -59,6 +59,8 @@ export default {
     components: {
         UpdateUserComp
     },
+    
+    props: ["user"],
 
     computed: {
         user() {
@@ -72,7 +74,7 @@ export default {
 
     methods: {
         deleteUser(userID) {
-            if (confirm("Are You Sure You Want TO Delete Your Account?")) {
+            if (confirm("Are You Sure You Want To Delete Your Account?")) {
                 this.$store.dispatch("deleteUser", userID);
                 setTimeout(() => {
                     location.reload();
