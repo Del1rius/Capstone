@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid text-center bg-black main">
-        <div class="card mx-auto p-5 w-50 align-items-center">
+        <div class="card mx-auto p-5 w-50 align-items-center login-form">
             <form @submit.prevent="login">
                 <h2 class="text-center display-3">
                     Login: 
@@ -11,18 +11,24 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="emailAdd" class="form-label">Password: </label>
+                    <label for="userPass" class="form-label">Password: </label>
                     <input type="password" id="userPass" class="form-control" v-model="payload.userPass" required/>
                 </div>
 
-
+                <div class="text-center mb-3">
+                    <button type="submit" class="btn login-btn fs-5 m-2">Login</button>
+                    <button type="reset" class="btn clear-btn fs-5 m-2">Reset</button>
+                </div>
             </form>
+            <div class="text-center mb-3">
+                    <router-link to="/register">Don't Have An Account? Register Here</router-link>
+            </div>
         </div>
     </div>
 </template>
 <script>
-import { useCookies } from "vue3-cookies";
-const { cookies } = useCookies;
+import { useCookies } from 'vue3-cookies'
+const { cookies } = useCookies();
 export default {
     data() {
         return {
@@ -51,7 +57,7 @@ export default {
     },
 
     mounted() {
-        console.log(cookies.get("setToken"))
+        console.log(cookies.get('setToken'))
     }
 }
 </script>
@@ -60,4 +66,27 @@ export default {
     min-height: 100vh;
     color: #eebc1d !important;
 } 
+
+.login-form {
+    background-color: black;
+    color: #eebc1d !important;
+    border: 4px solid #eebc1d;
+}
+
+.login-btn {
+    background-color: black;
+    color: #eebc1d !important;
+    border: 2px solid #eebc1d;
+}
+
+.clear-btn {
+    background-color: black;
+    color: #eebc1d;
+    border: 2px solid #eebc1d;
+}
+
+a{
+    text-decoration: none;
+    color: #eebc1d;
+}
 </style>

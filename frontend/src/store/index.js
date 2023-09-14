@@ -1,8 +1,8 @@
 import { createStore } from 'vuex'
 import router from '@/router';
 import axios from 'axios';
-import { useCookies } from 'vue3-cookies'
-const { cookies } = useCookies;
+import { useCookies } from 'vue3-cookies';
+const { cookies } = useCookies();
 const url = "https://capstone-grct.onrender.com/"
 
 export default createStore({
