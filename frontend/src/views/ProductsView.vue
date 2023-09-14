@@ -48,7 +48,7 @@
       </div>
     </div>
     <div v-else>
-      <spinner-comp class="mx-auto" />
+      <spinner-comp class="mx-auto"/>
     </div>
   </div>
 </template>

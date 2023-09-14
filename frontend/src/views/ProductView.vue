@@ -18,11 +18,16 @@
             </div>
         </div>
     </div>
+    <div v-else>
+        <SpinnerComp/>
+    </div>
     </div>
 </template>
 <script>
+import SpinnerComp from '@/components/SpinnerComp.vue';
 export default {
     props: ["product"],
+    components: {SpinnerComp},
 
     computed: {
         product() {
