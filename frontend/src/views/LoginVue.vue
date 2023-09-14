@@ -28,6 +28,7 @@
 </template>
 <script>
 import { useCookies } from 'vue3-cookies'
+import Swal from 'sweetalert2';
 const { cookies } = useCookies();
 export default {
     data() {

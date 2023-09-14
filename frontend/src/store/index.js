@@ -3,6 +3,8 @@ import router from '@/router';
 import axios from 'axios';
 import { useCookies } from 'vue3-cookies';
 const { cookies } = useCookies();
+import Swal from 'sweetalert2';
+
 const url = "https://capstone-grct.onrender.com/"
 
 export default createStore({
@@ -293,27 +295,25 @@ export default createStore({
     async deleteUser(context, userID) {
       try {
         const { res } = await axios.delete(`${url}user/${userID}`);
-        const { msg, err } = res.data;
+        const { message, err } = res.data;
 
         if (err) {
-          console.error("An Error Has Occurred: ", err);
+          console.error("An error has occurred: ", err);
           context.commit(
-            "setMsg", 
-            "An Error Has Occurred While Deleting User!"
-            );
+            "setMessage",
+            "An error has occurred while deleting user."
+          );
         }
 
-        if (msg) {
-          context.commit("setUser", msg);
-          console.log("User Deleted Successfully!")
+        if (message) {
+          context.commit("setUser", message);
+          console.log("User deleted successfully!");
         }
       } catch (e) {
-        context.commit(
-          "setMsg", 
-          "An Error Has Occurred While Deleting User!"
-          );
+        context.commit("setMessage", "An error occurred while deleting user.");
       }
     },
+
 
     async fetchOrders(context) {
       try {
