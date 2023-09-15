@@ -29,6 +29,10 @@ routes.patch("/user/:id", bodyParser.json(), (req, res) => {
     users.updateUser(req, res)
 })
 
+routes.delete("/user/:id", (req, res) => {
+    users.deleteUser(req, res)
+})
+
 routes.get("/products", (req, res) => {
     products.fetchProducts(req, res)
 })
