@@ -2,9 +2,9 @@
   <div>
     <div class="button">
       <a
-        href="#add-prod-modal"
         data-bs-toggle="modal"
-        data-bs-target="#add-prod-modal"
+        data-bs-target="#add-prod-modal"    
+        href="#add-prod-modal"
         class="m-2 text-center btn add-prod-btn"
       >
         Add Product
@@ -12,9 +12,9 @@
     </div>
     <div class="modal" id="add-prod-modal">
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content bg-black">
           <div class="modal-header">
-            <h3 class="text-center display-5">New Product:</h3>
+            <h3 class="text-center display-5">New Product</h3>
             <button
               type="button"
               class="btn-close"
@@ -152,4 +152,23 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.add-prod-btn {
+    color: #eebc1d;
+    border: 2px solid #eebc1d;
+    padding: 5px;
+    border-radius: 10px;
+}
+.clr-btn {
+    color: #eebc1d;
+    border: 2px solid #eebc1d;
+    padding: 5px;
+    border-radius: 10px; 
+}
+.btn-close {
+    color: #eebc1d;
+    background-color: #eebc1d;
+
+    /* background-color: black; */
+}
+</style>

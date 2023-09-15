@@ -6,22 +6,98 @@
 
         <div class="my-3 prod-table">
             <div class="mx-auto d-flex justify-content-between">
-                <h4 class="display-5">
+                <h4 class="display-5 text-center p-3">
                     Products
                 </h4>
-                <AddProductComp/>
+                <AddProductComp />
+            </div>
+            <div class="d-flex justify-content-center">
+                <table>
+                    <thead>
+                        <th>Product ID: </th>
+                        <th>Product Name: </th>
+                        <th>Quantity: </th>
+                        <th>Price: </th>
+                        <th>Category: </th>
+                        <th>Product Url: </th>
+                        <th>Action: </th>
+                    </thead>
+                    <tbody v-for="product in products" :key="product.prodID" :product="product">
+                        <tr v-if="products">
+                            <td>{{ product.prodID }}</td>
+                            <td>{{ product.prodName }}</td>
+                            <td>{{ product.quantity }}</td>
+                            <td>{{ product.price }}</td>
+                            <td>{{ product.category }}</td>
+                            <td><img :src="product.prodUrl" :alt="product.prodName" loading="lazy" class="img-fluid prod-img"></td>
+                            <td>
+                                <UpdateProductComp :product="product"/>
+                                <button type="submit" class="btn del-btn" @click="deleteProduct(product.prodID)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="my-3 user-table">
+            <div class="d-flex justify-content-between">
+                <h4 class="display-5 text-center p-3">
+                    Users
+                </h4>
+                <AddUserComp/>
+            </div>
+            <div class="d-flex justify-content-center">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>User Role</th>
+                            <th>Email</th>
+                            <th>Profile Image</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody v-for="user in users" :key="user.userID" :user="user">
+                        <tr v-if="users">
+                            <td>{{ user.userID }}</td>
+                            <td>{{ user.firstName }}</td>
+                            <td>{{ user.lastName }}</td>
+                            <td>{{ user.userRole }}</td>
+                            <td>{{ user.emailAdd }}</td>
+                            <td><img :src="user.userImg" :alt="user.userImg" loading="lazy" class="img-fluid user-img"></td>
+                            <td>
+                                <UpdateUserComp/>
+
+                                <button class="btn del-btn" @click="deleteUser(user.userID)">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </template>
 <script>
+import SpinnerComp from '@/components/SpinnerComp.vue';
 import Swal from 'sweetalert2'
 import AddProductComp from '@/components/AddProductComp.vue';
+import UpdateUserComp from '@/components/UpdateUserComp.vue';
+import UpdateProductComp from '@/components/UpdateProductComp.vue'
+import AddUserComp from '../components/AddUserComp.vue';
 export default {
     props: ['product', 'user'],
 
     components: {
-        AddProductComp
+        SpinnerComp,
+        AddProductComp,
+        UpdateUserComp,
+        UpdateProductComp,
+        AddUserComp,
     },
 
     computed: {
