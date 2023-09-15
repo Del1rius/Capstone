@@ -41,15 +41,15 @@ routes.get("/products/:id", (req, res) => {
     products.fetchProduct(req, res)
 })
 
-routes.post("/product", (req, res) => {
+routes.post("/product", bodyParser.json(),(req, res) => {
     products.addProduct(req, res)
 })
 
-routes.put("/product/:id", (req, res) => {
+routes.put("/product/:id", bodyParser.json(),(req, res) => {
     products.updateProduct(req, res)
 })
 
-routes.patch("/product/:id", (req, res) => {
+routes.patch("/product/:id", bodyParser.json(),(req, res) => {
     products.updateProduct(req, res)
 })
 
