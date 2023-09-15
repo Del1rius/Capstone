@@ -61,7 +61,7 @@
                         </tr>
                     </thead>
                     <tbody v-for="user in users" :key="user.userID" :user="user" class="">
-                        <tr v-if="user">
+                        <tr v-if="users">
                             <td>{{ user.userID }}</td>
                             <td>{{ user.firstName }}</td>
                             <td>{{ user.lastName }}</td>
@@ -90,7 +90,7 @@ import UpdateUserComp from '@/components/UpdateUserComp.vue';
 import UpdateProductComp from '@/components/UpdateProductComp.vue'
 import AddUserComp from '../components/AddUserComp.vue';
 export default {
-    props: ['product', 'user'],
+    props: ['product', 'users'],
 
     components: {
         SpinnerComp,
