@@ -23,7 +23,7 @@
                         <th>Action: </th>
                     </thead>
                     <tbody v-for="product in products" :key="product.prodID" :product="product">
-                        <tr v-if="products">
+                        <tr v-if="product">
                             <td>{{ product.prodID }}</td>
                             <td>{{ product.prodName }}</td>
                             <td>{{ product.quantity }}</td>
@@ -51,17 +51,17 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>User ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>User Role</th>
-                            <th>Email</th>
-                            <th>Profile Image</th>
-                            <th>Action</th>
+                            <th>User ID: </th>
+                            <th>First Name: </th>
+                            <th>Last Name: </th>
+                            <th>User Role: </th>
+                            <th>Email: </th>
+                            <th>Profile Image: </th>
+                            <th>Action: </th>
                         </tr>
                     </thead>
-                    <tbody v-for="user in users" :key="user.userID" :user="user">
-                        <tr v-if="users">
+                    <tbody v-for="user in users" :key="user.userID" :user="user" class="">
+                        <tr v-if="user">
                             <td>{{ user.userID }}</td>
                             <td>{{ user.firstName }}</td>
                             <td>{{ user.lastName }}</td>
@@ -134,7 +134,9 @@ export default {
                 Swal.fire({
                     title: "Product Deleted!",
                     icon: "success",
-                    timer: 5000,
+                    background: "#000000",
+                    color: "#eebc1d",
+
                 })
             }
         },
@@ -149,7 +151,8 @@ export default {
                 Swal.fire({
                     title: "User Deleted!",
                     icon: "success",
-                    timer: 5000,
+                    background: "#000000",
+                    color: "#eebc1d",
                 })
             }
         },
@@ -161,4 +164,21 @@ export default {
     min-height: 100vh;
     color: #eebc1d !important;
 }    
+
+tr,
+th,
+td {
+  border: 3px solid #eebc1d;
+  padding: 10px;
+  color: #eebc1d;
+}
+
+.del-btn{
+    color: #eebc1d;
+    border: 2px solid #eebc1d;
+    padding: 5px;
+    border-radius: 10px;  
+}
+
+
 </style>
