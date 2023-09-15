@@ -137,7 +137,7 @@ export default createStore({
 
     async addProduct(context, payload) {
       try {
-        const { res } = await axios.post(`${url}product, payload`);
+        const { res } = await axios.post(`${url}product`, payload);
         const { msg, err } = await res.data;
         
         console.log(msg, err);
