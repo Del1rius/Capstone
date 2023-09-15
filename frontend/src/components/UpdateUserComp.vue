@@ -16,7 +16,7 @@
         aria-hidden="true"
       >
         <div class="modal-dialog">
-          <div class="modal-content blue-bg">
+          <div class="modal-content bg-black">
             <div class="modal-header">
               <h1 class="modal-title text-center heading-text">Update User:</h1>
               <button
@@ -147,6 +147,22 @@ export default {
 
 }
 </script>
-<style>
-    
+<style scoped>
+.edit-users-btn {
+  color: #eebc1d;
+  border: 2px solid #eebc1d;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.clr-btn {
+    color: #eebc1d;
+    border: 2px solid #eebc1d;
+    padding: 5px;
+    border-radius: 10px; 
+}
+.btn-close {
+    background-color: #eebc1d;
+}    
 </style>

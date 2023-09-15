@@ -24,19 +24,6 @@
 
           <div>
             <form @submit.prevent="addProduct" class="p-3">
-              <div class="mb-3">
-                <label for="prodID" class="form-label"> Product ID: </label>
-                <input
-                  v-model="product.prodID"
-                  type="text"
-                  id="prodID"
-                  class="form-control"
-                  placeholder="e.g 1"
-                  required
-                  oninvalid="this.setCustomValidity('Please Enter A Product ID')"
-                  oninput="this.setCustomValidity('')"
-                />
-              </div>
 
               <div class="mb-3">
                 <label for="prodName" class="form-label"> Product Name: </label>
@@ -131,7 +118,6 @@ export default {
   data() {
     return {
       product: {
-        prodID: "",
         prodName: "",
         quantity: "",
         price: "",
@@ -168,7 +154,5 @@ export default {
 .btn-close {
     color: #eebc1d;
     background-color: #eebc1d;
-
-    /* background-color: black; */
 }
 </style>
