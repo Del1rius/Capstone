@@ -41,44 +41,59 @@
         </div>
 
         <div class="my-3 user-table">
-            <div class="d-flex justify-content-between">
-                <h4 class="display-5 text-center p-3">
-                    Users
-                </h4>
-                <AddUserComp/>
-            </div>
-            <div class="d-flex justify-content-center">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>User ID: </th>
-                            <th>First Name: </th>
-                            <th>Last Name: </th>
-                            <th>User Role: </th>
-                            <th>Email: </th>
-                            <th>Profile Image: </th>
-                            <th>Action: </th>
-                        </tr>
-                    </thead>
-                    <tbody v-for="user in users" :key="user.userID" :user="user" class="">
-                        <tr v-if="users">
-                            <td>{{ user.userID }}</td>
-                            <td>{{ user.firstName }}</td>
-                            <td>{{ user.lastName }}</td>
-                            <td>{{ user.userRole }}</td>
-                            <td>{{ user.emailAdd }}</td>
-                            <td><img :src="user.userImg" :alt="user.userImg" loading="lazy" class="img-fluid user-img"></td>
-                            <td>
-                                <UpdateUserComp/>
+      <div class="mx-auto d-flex justify-content-between" style="width: 90%">
+        <h3 class="text-center p-3">Users</h3>
 
-                                <button class="btn del-btn" @click="deleteUser(user.userID)">
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <add-user-comp />
+      </div>
+
+      <div class="d-flex justify-content-center media-table">
+        <table>
+          <thead>
+            <tr>
+              <th>User ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>User Role</th>
+              <th>Email</th>
+              <th class="media-hide-2">Profile Image</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody v-for="user in users" :key="user.userID" :user="user">
+            <tr v-if="user">
+              <td>{{ user.userID }}</td>
+              <td>{{ user.firstName }}</td>
+              <td>{{ user.lastName }}</td>
+              <td>{{ user.userRole }}</td>
+              <td class="media-font-2">{{ user.emailAdd }}</td>
+              <td class="text-center user-img media-hide-2">
+                <img
+                  :src="user.userImg"
+                  :alt="user.firstName"
+                  loading="lazy"
+                  class="img-fluid user-img"
+                />
+              </td>
+              <td>
+                <update-user-comp :user="user" />
+
+                <button
+                  class="btn del-btn media-font-2"
+                  @click="deleteUser(user.userID)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+
+            <tr v-else>
+              <spinner-comp />
+            </tr>
+          </tbody>
+        </table>
+        </div>
         </div>
     </div>
 </template>
@@ -90,7 +105,7 @@ import UpdateUserComp from '@/components/UpdateUserComp.vue';
 import UpdateProductComp from '@/components/UpdateProductComp.vue'
 import AddUserComp from '../components/AddUserComp.vue';
 export default {
-    props: ['product', 'users'],
+    props: ['product', 'user'],
 
     components: {
         SpinnerComp,
@@ -178,6 +193,11 @@ td {
     border: 2px solid #eebc1d;
     padding: 5px;
     border-radius: 10px;  
+}
+
+.user-img {
+    max-height: 250px !important;
+    max-width: 250px !important;
 }
 
 
