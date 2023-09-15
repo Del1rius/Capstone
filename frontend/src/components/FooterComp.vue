@@ -5,7 +5,7 @@
         <section class="">
           <div class="row">
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-              <img class="logo" src="https://i.postimg.cc/gjDMJQY2/1694019758092-thumbnail-removebg-preview.png" />
+              <img class="logo" src="https://i.postimg.cc/rz2mjq9w/logo.png" />
             </div>
             <hr class="w-100 clearfix d-md-none" />
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
@@ -30,9 +30,9 @@
             <hr class="w-100 clearfix d-md-none"/>
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-              <p><i class="fas fa-home mr-3"></i>Cape Town, 7100 CPT</p>
-              <p><i class="fas fa-envelope mr-3"></i> kustomkulture@gmail.com</p>
-              <p><i class="fas fa-phone mr-3"></i> <img class="whatsapp" src="https://i.postimg.cc/SsrhQqGX/whatsapp.png"/> +27 664 685 665</p>
+              <p><i class="fas fa-home mr-3"></i>Cape Town</p>
+              <p><i class="fas fa-envelope mr-3"></i>kustomkulture@gmail.com</p>
+              <p><i class="fas fa-phone mr-3"></i> <img class="whatsapp" src="https://i.postimg.cc/SsrhQqGX/whatsapp.png"/>Telephone:(+27) 021 420 6969</p>
             </div>
           </div>
         </section>
