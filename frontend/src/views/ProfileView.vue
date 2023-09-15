@@ -96,7 +96,7 @@ export default {
 
   methods: {
     deleteUser(userID) {
-      if (confirm("Are you sure you want to delete this user?")) {
+      if (confirm("Are you sure you want to delete your account?")) {
         this.$store.dispatch("deleteUser", userID);
         setTimeout(() => {
           location.reload();

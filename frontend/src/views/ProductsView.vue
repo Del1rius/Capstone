@@ -56,7 +56,7 @@
 import SpinnerComp from "../components/SpinnerComp.vue";
 
 export default {
-  // props: [products],
+  props: ['products'],
 
   components: { SpinnerComp },
 
