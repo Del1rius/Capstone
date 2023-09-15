@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #010111;
+    color: #eebc1d;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #eebc1d;
+}
+
+table {
+    margin: auto;
+    padding: 10px;
+    font-size: 20px;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 22px;
+    padding: 10px;
+    text-align: left;
+    border: 3px solid #eebc1d;
+}
+
+td {
+    padding: 10px;
+    border: 3px solid #eebc1d;
+}
